@@ -5,6 +5,7 @@ import {
   useContext,
   SetStateAction,
   Dispatch,
+  type ReactNode,
 } from "react";
 import { usePlayback } from "./PlaybackProvider";
 
@@ -37,7 +38,7 @@ export function useZoom() {
 }
 
 export type ZoomProviderProps = {
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode;
   startTimeInitial?: number;
   endTimeInitial?: number;
 };

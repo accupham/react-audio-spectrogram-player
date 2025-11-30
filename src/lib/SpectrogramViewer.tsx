@@ -1,9 +1,9 @@
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { usePlayback } from "./PlaybackProvider";
 import { useZoom } from "./ZoomProvider";
 
 interface SpectrogramViewerProps {
-  children: JSX.Element;
+  children: ReactNode;
   height: number;
 }
 

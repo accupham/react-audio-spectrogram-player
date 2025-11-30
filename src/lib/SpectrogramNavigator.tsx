@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { usePlayback } from "./PlaybackProvider";
 import { useTheme } from "./ThemeProvider";
 import { useZoom } from "./ZoomProvider";
 
 interface SpectrogramNavigatorProps {
-  children: JSX.Element;
+  children: ReactNode;
   height: number;
 }
 

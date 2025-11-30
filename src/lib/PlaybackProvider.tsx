@@ -6,6 +6,7 @@ import {
   useContext,
   SetStateAction,
   Dispatch,
+  type ReactNode,
 } from "react";
 import { useTheme } from "./ThemeProvider";
 
@@ -40,7 +41,7 @@ export function usePlayback() {
 }
 
 export type PlaybackProviderProps = {
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode;
   src: string;
   settings: boolean;
   sampleRate: number;
@@ -66,7 +67,7 @@ function PlaybackProvider(props: PlaybackProviderProps) {
   const [playbackRate, _setPlaybackRate] = useState(playbackSpeedInitial);
   const [mode, setMode] = useState<string>(playheadModeInitial);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const intervalRef = useRef<number>();
+  const intervalRef = useRef<number | undefined>(undefined);
   const [showSettingsPanel, setShowSettingsPanel] = useState(false);
   const { dark } = useTheme();
   const [audioSamples, setAudioSamples] = useState<Float32Array>(

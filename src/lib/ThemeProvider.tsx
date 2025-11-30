@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 
 export type ThemeContextType = {
   dark: boolean;
@@ -11,7 +11,7 @@ export function useTheme() {
 }
 
 export type ThemeProviderProps = {
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode;
   dark: boolean;
 };
 
